@@ -30,7 +30,6 @@ component displayname="Authenticate This" output="false" author="Andrew Bellenie
 		string formatErrorMessage="Password must be at least 8 characters long and contain a mixture of numbers and letters",
 		numeric randomPasswordLength="12"
 	) mixin="model" {
-		this.javaSettings = {LoadPaths = ["/plugins/authenticateThis/"]};
 		variables.wheels.class.authenticateThis = Duplicate(arguments);
 		variables.wheels.class.authenticateThis.bCrypt =  CreateObject( "java", "BCrypt" ).init();
 		if ( arguments.required ) {
